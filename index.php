@@ -1,8 +1,8 @@
 <?php
 include __DIR__ . './models/movies.php';
 
-$new_film = new Movie('Harry Potter', 'J.K. Rowling', 'Inglese', '2000');
-
+$new_film = new Movie('Harry Potter', 'J.K. Rowling', 'Inglese', '2000', new Genre(["Fantascienza", "Azione"]));
+var_dump($new_film);
 ?>
 
 <!DOCTYPE html>
