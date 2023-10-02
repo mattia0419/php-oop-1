@@ -3,18 +3,18 @@ require __DIR__ . './models/movies.php';
 require __DIR__ . '/data/movies_db.php';
 require __DIR__ . './models/genre.php';
 
-$movies = [];
+// $movies = [];
 
-foreach($movies_data as $movie_data) {
-    $genres = [];
-    foreach($movie_data['genres'] as $genre_data){
-        $genres[] = new Genre($genre_data);
-    }
+// foreach($movies_data as $movie_data) {
+//     $genres = [];
+//     foreach($movie_data['genres'] as $genre_data){
+//         $genres[] = new Genre($genre_data);
+//     }
 
     
-    $movies[] = new Movie($movie_data['title'], $movie_data['author'], $movie_data['language'], $movie_data['date'], $genres);
+//     $movies[] = new Movie($movie_data['title'], $movie_data['author'], $movie_data['language'], $movie_data['date'], $genres);
     
-}
+// }
 
 // var_dump($movies);
 // echo '<hr>';
@@ -35,7 +35,7 @@ foreach($movies_data as $movie_data) {
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
+    <!-- <div class="container">
         <?php foreach($movies as $movie): ?>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
@@ -46,6 +46,6 @@ foreach($movies_data as $movie_data) {
                 </div>
             </div> 
         <?php endforeach; ?>    
-    </div>
+    </div> -->
 </body>
 </html>
