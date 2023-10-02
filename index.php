@@ -1,8 +1,28 @@
 <?php
-include __DIR__ . './models/movies.php';
+require __DIR__ . './models/movies.php';
+require __DIR__ . '/data/movies_db.php';
+require __DIR__ . './models/genre.php';
 
-$new_film = new Movie('Harry Potter', 'J.K. Rowling', 'Inglese', '2000', new Genre(["Fantascienza", "Azione"]));
-var_dump($new_film);
+$movies = [];
+
+foreach($movies_data as $movie_data) {
+    $genres = [];
+    foreach($movie_data['genres'] as $genre_data){
+        $genres[] = new Genre($genre_data);
+    }
+
+    
+    $movies[] = new Movie($movie_data['title'], $movie_data['author'], $movie_data['language'], $movie_data['date'], $genres);
+    
+}
+
+var_dump($movies);
+echo '<hr>';
+
+ foreach($movies as $movie) {
+     echo $movie -> getDetails();
+     echo '<hr>';
+ }
 ?>
 
 <!DOCTYPE html>
@@ -13,12 +33,10 @@ var_dump($new_film);
     <title>Document</title>
 </head>
 <body>
-    <h1><?php echo $new_film->getTitle();?></h1>
+    <!-- <h1><?php echo $new_film->title; ?></h1>
     <span><?php echo $new_film->author; ?></span>
     <span><?php echo $new_film->language; ?></span>
     <span><?php echo $new_film->date; ?></span>
-    <?php foreach($new_film->genres as $genre):?>
-        <span><?php echo $new_film->genres ?></span>
-    <?php endforeach; ?>    
+    <span><?php echo $new_film->getGenresText(); ?></span> -->
 </body>
 </html>
