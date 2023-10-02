@@ -24,6 +24,6 @@ class Movie {
 
     public function getDetails(){
         $genres_text = $this->get_genres_text();
-        return "titolo: $this->title, Autore: $this->author, Lingua: $this->language, Data: $this->date, Generi: $genres_text";
+        return "Autore: $this->author, Lingua: $this->language, Data: $this->date, Generi: $genres_text";
     }
 }
